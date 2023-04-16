@@ -1,0 +1,21 @@
+<h1>Lista de personajes de Rick y Morty</h1>
+<hr />
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-sm-3 g-3">
+    <div *ngFor="let personaje of personajes" class="col">
+      <div class="card h-100">
+        <img src="{{ personaje.image }}" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{ personaje.name }}</h5>
+          <div class="card-text">
+            <ul>
+              <li>Estatus: {{ personaje.status }}</li>
+              <li>Género: {{ personaje.gender }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
