@@ -1,1 +1,27 @@
-<p>personajes works!</p>
+<div
+  class="container my-5"
+  infinite-scroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="1000"
+  (scrolled)="onScroll()"
+>
+  <div class="row row-cols-1 row-cols-sm-3 g-3">
+    <div *ngFor="let personaje of personajes" class="col">
+      <div class="card h-100 border border-dark">
+        <div class="card-header bg-dark text-white">
+          <h5 class="card-title">{{ personaje.name }}</h5>
+        </div>
+        <img src="{{ personaje.image }}" class="card-img-top" />
+        <div class="card-body">
+          <div class="card-text">
+            <ul>
+              <li><strong>Origen:</strong> {{ personaje.origin.name }}</li>
+              <li>Estatus: {{ personaje.status }}</li>
+              <li>Género: {{ personaje.gender }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

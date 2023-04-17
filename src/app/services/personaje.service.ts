@@ -10,7 +10,7 @@ export class PersonajeService {
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<any> {
-    return this.http.get(this.url);
+  getAll(page: number = 1): Observable<any> {
+    return this.http.get(`${this.url}/?page=${page}`);
   }
 }
